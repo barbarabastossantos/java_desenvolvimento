@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de E-mail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-size: 14px;
+            color: red;
+        }
+
+        .message.success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Formulário de E-mail</h2>
+        <form id="emailForm">
+            <div class="form-group">
+                <label for="email">Digite seu e-mail:</label>
+                <input type="text" id="email" placeholder="exemplo@dominio.com" style="width: 100%; padding: 8px;" required>
+            </div>
+            <button type="submit" style="width: 100%; padding: 10px;">Enviar</button>
+            <div id="mensagem" class="message"></div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('emailForm');
+        const emailInput = document.getElementById('email');
+        const mensagem = document.getElementById('mensagem');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que o formulário recarregue a página
+
+            const email = emailInput.value.trim();
+            const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if (email === "") {
+                mensagem.textContent = "O campo de e-mail não pode estar vazio.";
+                mensagem.className = "message";
+            } else if (!regexEmail.test(email)) {
+                mensagem.textContent = "E-mail inválido. Um e-mail válido deve conter: nome@dominio.com";
+                mensagem.className = "message";
+            } else {
+                mensagem.textContent = "E-mail válido! Formulário enviado com sucesso.";
+                mensagem.className = "message success";
+            }
+        });
+    </script>
+</body>
+</html>
