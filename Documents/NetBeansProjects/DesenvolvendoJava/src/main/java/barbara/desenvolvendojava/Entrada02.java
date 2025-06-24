@@ -18,6 +18,8 @@ public class Entrada02 {
         
       
         System.out.println("Voce digitou : " + x);
+        
+        sc.close();
     }
     
 }
