@@ -14,7 +14,7 @@ public class exercicio16 {
         
         System.out.println("""
                            -----------------------------------------------------------
-                           
+                           -----------------------------------------------------------
                            Digite o dia da semana de acordo com os seguintes numeros :
                            
                            [1] Domingo
@@ -26,7 +26,8 @@ public class exercicio16 {
                            [7] Sabado
                            
                            De acordo com a numeracao que dia e hoje da semana : 
-                           
+                          ___________________________________________________________
+                           _____________________________________________________________
                            
                            """);
         int numero=sc.nextInt();
