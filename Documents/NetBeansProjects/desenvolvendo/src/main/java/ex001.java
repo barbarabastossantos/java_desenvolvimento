@@ -34,11 +34,11 @@ public class ex001 {
         System.out.println(" \n Matriz ");
         
         for(int ii=0;ii < mat.length; ii++){
-            for(int jj=0; jj < mat[ii].length;jj++){
-                System.out.print(mat[ii][jj]+ " ");   
+            for(int jj=0; jj < mat[ii].length; jj++){
+                System.out.print(mat[ii][jj] + " ");
             }
             System.out.println(" ");
         }
-        sc.close();
+     sc.close();
     }
 }
